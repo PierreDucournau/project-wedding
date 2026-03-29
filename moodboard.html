@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valérie & Pierre — Mood Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ivory:   #FDFAF5;
+  --cream:   #F5EEE3;
+  --ink:     #1C120A;
+  --ink-mid: rgba(28,18,10,0.45);
+  --ink-low: rgba(28,18,10,0.2);
+  --rule:    rgba(28,18,10,0.12);
+  --c1: #C8215A;
+  --c2: #E896A8;
+  --c3: #F8E2D8;
+  --c4: #F4A870;
+  --c5: #E8722A;
+  --c6: #1E4D2E;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── LAYOUT ── */
+.page { max-width: 1280px; margin: 0 auto; padding: 0 5vw; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  position: relative;
+  padding: 8vh 5vw 6vh;
+  gap: 0;
+}
+
+.hero-botanical {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 540px;
+}
+.hero-botanical-right {
+  justify-content: flex-end;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 4vw;
+  position: relative;
+  z-index: 2;
+}
+
+/* Center column spanning both */
+.hero-center {
+  grid-column: 1 / 3;
+  text-align: center;
+  padding: 3rem 0 4rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin: 0 -5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+/* Rethink: single column centered hero with botanical on sides */
+.hero-v2 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 5vw;
+}
+
+.hero-left-botanical {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38%;
+  max-width: 480px;
+  pointer-events: none;
+}
+.hero-right-botanical {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  width: 32%;
+  max-width: 400px;
+  pointer-events: none;
+}
+.hero-right-botanical-2 {
+  position: absolute;
+  right: 3%;
+  bottom: 2%;
+  width: 20%;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.hero-tc {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 520px;
+}
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.62rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--c1);
+  margin-bottom: 1.8rem;
+  opacity: 0.85;
+}
+
+.hero-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3.8rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.hero-names .amp {
+  font-size: 0.55em;
+  display: block;
+  font-style: normal;
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.3em;
+  color: var(--ink-mid);
+  margin: 0.4em 0;
+}
+
+.hero-rule {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--rule), transparent);
+  margin: 2rem auto;
+}
+
+.hero-location {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+/* ── BOTANICAL PLATE ── */
+.plate-section {
+  padding: 7rem 0;
+  border-top: 1px solid var(--rule);
+}
+.plate-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--c1);
+  margin-bottom: 0.6rem;
+  opacity: 0.8;
+}
+.plate-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  color: var(--ink);
+  margin-bottom: 3.5rem;
+}
+
+.botanical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+
+.botanical-cell {
+  padding: 3rem 2rem 2rem;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+.botanical-cell:last-child { border-right: none; }
+
+.botanical-cell svg {
+  display: block;
+}
+
+.botanical-name-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.78rem;
+  color: var(--ink-mid);
+  text-align: center;
+  line-height: 1.5;
+}
+.botanical-name-common {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-low);
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+/* ── PALETTE ── */
+.palette-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.palette-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.palette-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.swatch-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.07);
+}
+.swatch-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-mid);
+  text-align: center;
+}
+.swatch-hex {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-low);
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+/* ── TYPOGRAPHY ── */
+.typo-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--rule);
+}
+.typo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3.5rem;
+}
+.typo-spec { }
+.typo-role-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.58rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--c1);
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+.typo-font-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--ink-low);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.typo-sample-large {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  line-height: 1;
+  color: var(--ink);
+}
+.typo-sample-abc {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-low);
+  margin-top: 1rem;
+}
+.typo-sample-body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--ink-mid);
+  margin-top: 0.8rem;
+}
+.typo-sample-weights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.typo-sample-weights span {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* ── INVITATION ── */
+.invitation-section {
+  padding: 7rem 0 8rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.invitation-card {
+  width: 100%;
+  max-width: 440px;
+  background: white;
+  padding: 4rem 3.5rem;
+  text-align: center;
+  box-shadow: 0 2px 40px rgba(28,18,10,0.08), 0 1px 3px rgba(28,18,10,0.05);
+  position: relative;
+}
+.invitation-card::before {
+  content: '';
+  position: absolute;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid rgba(28,18,10,0.07);
+  pointer-events: none;
+}
+/* corner flourishes */
+.inv-corner {
+  position: absolute;
+  width: 18px; height: 18px;
+}
+.inv-corner svg { display: block; }
+.inv-corner-tl { top: 7px; left: 7px; }
+.inv-corner-tr { top: 7px; right: 7px; transform: scaleX(-1); }
+.inv-corner-bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+.inv-corner-br { bottom: 7px; right: 7px; transform: scale(-1,-1); }
+
+.inv-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.55rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--ink-low);
+  margin-bottom: 1.4rem;
+}
+.inv-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.inv-amp {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.3em;
+  color: var(--ink-mid);
+  margin: 0.5em 0;
+}
+.inv-rule { width: 32px; height: 1px; background: var(--c5); margin: 1.4rem auto; }
+.inv-detail {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  line-height: 2.2;
+}
+.inv-btn {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: 0.7rem 2rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.inv-btn:hover { background: var(--ink); color: white; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 3rem 5vw;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-low);
+}
+.footer-note {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-low);
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+.reveal.in { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.12s; }
+.d2 { transition-delay: 0.24s; }
+.d3 { transition-delay: 0.38s; }
+
+@media (max-width: 900px) {
+  .botanical-grid { grid-template-columns: repeat(2, 1fr); }
+  .botanical-cell:nth-child(2) { border-right: none; }
+  .botanical-cell:nth-child(3) { border-top: 1px solid var(--rule); }
+  .typo-pair { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-right-botanical, .hero-right-botanical-2 { display: none; }
+  .hero-left-botanical { width: 55%; opacity: 0.45; }
+}
+@media (max-width: 600px) {
+  .botanical-grid { grid-template-columns: 1fr 1fr; }
+  .hero-left-botanical { display: none; }
+  .palette-row { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<div class="hero-v2">
+
+  <!-- LEFT: Anthurium + Heliconia -->
+  <div class="hero-left-botanical">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 560" width="100%">
+      <defs>
+        <!-- Anthurium spathe gradient -->
+        <radialGradient id="ant-sp" cx="38%" cy="28%" r="65%">
+          <stop offset="0%" stop-color="#F04858"/>
+          <stop offset="42%" stop-color="#C81830"/>
+          <stop offset="100%" stop-color="#7A0A1A"/>
+        </radialGradient>
+        <!-- Spathe highlight -->
+        <radialGradient id="ant-hi" cx="32%" cy="25%" r="40%">
+          <stop offset="0%" stop-color="rgba(255,160,140,0.28)"/>
+          <stop offset="100%" stop-color="rgba(255,160,140,0)"/>
+        </radialGradient>
+        <!-- Stem green -->
+        <linearGradient id="grn-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1A4A1E"/>
+          <stop offset="100%" stop-color="#3A8028"/>
+        </linearGradient>
+        <!-- Heliconia bract gradients -->
+        <linearGradient id="heli-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#D42A1A"/>
+          <stop offset="65%" stop-color="#E86028"/>
+          <stop offset="100%" stop-color="#F5A040"/>
+        </linearGradient>
+        <linearGradient id="heli-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#C02018"/>
+          <stop offset="65%" stop-color="#D85020"/>
+          <stop offset="100%" stop-color="#E89030"/>
+        </linearGradient>
+        <!-- Leaf gradient -->
+        <linearGradient id="leaf-g" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#4A9430"/>
+          <stop offset="100%" stop-color="#1A4A1E"/>
+        </linearGradient>
+      </defs>
+
+      <!-- ─── ANTHURIUM (top right area) ─── -->
+      <!-- Petiole -->
+      <path d="M 218,395 Q 215,430 210,468" stroke="#2A6820" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Large leaf -->
+      <path d="M 210,468 C 170,475 118,488 95,510 C 132,506 175,494 210,476" fill="url(#leaf-g)" opacity="0.55"/>
+      <!-- Vein of leaf -->
+      <path d="M 210,468 Q 150,490 100,510" stroke="#1A4A1E" stroke-width="1.2" fill="none" opacity="0.3"/>
+
+      <!-- Spathe -->
+      <path d="
+        M 218,198
+        C 252,156 308,168 308,218
+        C 308,272 252,316 218,340
+        C 184,316 128,272 128,218
+        C 128,168 184,156 218,198 Z
+      " fill="url(#ant-sp)"/>
+
+      <!-- Spathe highlight overlay -->
+      <path d="
+        M 218,198
+        C 252,156 308,168 308,218
+        C 308,272 252,316 218,340
+        C 184,316 128,272 128,218
+        C 128,168 184,156 218,198 Z
+      " fill="url(#ant-hi)"/>
+
+      <!-- Spathe veins -->
+      <path d="M 218,198 Q 218,268 218,340" stroke="rgba(140,8,22,0.15)" stroke-width="1.5" fill="none"/>
+      <path d="M 218,225 Q 248,222 278,214" stroke="rgba(140,8,22,0.10)" stroke-width="1" fill="none"/>
+      <path d="M 218,245 Q 246,243 272,236" stroke="rgba(140,8,22,0.10)" stroke-width="1" fill="none"/>
+      <path d="M 218,265 Q 240,264 258,260" stroke="rgba(140,8,22,0.08)" stroke-width="1" fill="none"/>
+      <path d="M 218,225 Q 188,222 158,216" stroke="rgba(140,8,22,0.10)" stroke-width="1" fill="none"/>
+      <path d="M 218,245 Q 190,243 164,238" stroke="rgba(140,8,22,0.10)" stroke-width="1" fill="none"/>
+      <path d="M 218,265 Q 196,264 178,262" stroke="rgba(140,8,22,0.08)" stroke-width="1" fill="none"/>
+
+      <!-- Spadix -->
+      <path d="M 234,214 Q 272,250 264,318" stroke="#C8A020" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M 234,214 Q 272,250 264,318" stroke="#F0C840" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <path d="M 234,214 Q 272,250 264,318" stroke="#8A6808" stroke-width="1.5" fill="none" stroke-dasharray="2,6" opacity="0.25"/>
+
+      <!-- Anthurium stem to petiole -->
+      <path d="M 218,340 Q 218,368 218,395" stroke="#2A6820" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <!-- ─── HELICONIA (bottom left area) ─── -->
+      <!-- Main stem -->
+      <path d="M 82,540 Q 80,460 78,350" stroke="url(#grn-stem)" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+      <!-- Sub-stems for each bract -->
+      <path d="M 78,488 Q 88,480 105,472" stroke="#2A6820" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 78,455 Q 65,448 48,440" stroke="#2A6820" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 78,420 Q 90,412 110,405" stroke="#2A6820" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 78,388 Q 62,381 44,374" stroke="#2A6820" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 78,355 Q 92,348 114,342" stroke="#2A6820" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Bract 1 — right, bottom -->
+      <path d="M 78,492 C 94,482 122,474 148,469 C 162,467 168,472 164,480 C 148,484 118,490 82,496 Z" fill="url(#heli-1)"/>
+      <path d="M 78,492 C 94,482 122,474 148,469" stroke="rgba(255,200,100,0.3)" stroke-width="1" fill="none"/>
+      <!-- Bract 2 — left -->
+      <path d="M 78,458 C 62,450 36,444 14,440 C 0,438 -4,444 2,452 C 18,455 44,460 80,464 Z" fill="url(#heli-2)"/>
+      <!-- Bract 3 — right -->
+      <path d="M 78,424 C 94,414 124,406 152,401 C 166,399 172,404 168,412 C 152,416 120,422 82,428 Z" fill="url(#heli-1)"/>
+      <!-- Bract 4 — left -->
+      <path d="M 78,392 C 60,384 34,378 12,374 C -2,372 -5,378 1,386 C 17,390 42,395 80,398 Z" fill="url(#heli-2)"/>
+      <!-- Bract 5 — right, top -->
+      <path d="M 78,358 C 92,349 118,342 144,338 C 157,336 162,341 158,349 C 143,352 114,358 82,362 Z" fill="url(#heli-1)"/>
+
+      <!-- Tip small florets inside bracts -->
+      <path d="M 148,469 Q 155,470 160,476" stroke="#F5D070" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 152,401 Q 159,402 164,408" stroke="#F5D070" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 144,338 Q 150,339 156,345" stroke="#F5D070" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- Large background banana-style leaves (behind everything) -->
+      <path d="M 40,540 C 20,500 10,440 30,380 C 50,360 70,370 78,410 C 58,448 48,498 50,540 Z" fill="url(#leaf-g)" opacity="0.3"/>
+      <path d="M 150,540 C 170,500 185,450 165,395 C 148,378 130,390 122,430 C 138,470 148,505 148,540 Z" fill="url(#leaf-g)" opacity="0.22"/>
+    </svg>
+  </div>
+
+  <!-- RIGHT: Birds of Paradise -->
+  <div class="hero-right-botanical">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 480" width="100%">
+      <defs>
+        <linearGradient id="bop-sepal" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#D46010"/>
+          <stop offset="50%" stop-color="#F09020"/>
+          <stop offset="100%" stop-color="#F8C040"/>
+        </linearGradient>
+        <linearGradient id="bop-petal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#2040A0"/>
+          <stop offset="100%" stop-color="#5060C8"/>
+        </linearGradient>
+        <linearGradient id="bop-bract" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#3A7028"/>
+          <stop offset="40%" stop-color="#1E4D1A"/>
+          <stop offset="100%" stop-color="#0E2A10"/>
+        </linearGradient>
+        <linearGradient id="bop-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1E4D1A"/>
+          <stop offset="100%" stop-color="#3A7028"/>
+        </linearGradient>
+        <linearGradient id="bop-leaf1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#4A8830"/>
+          <stop offset="100%" stop-color="#1A4420"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Long stem -->
+      <path d="M 140,470 Q 138,380 136,290" stroke="url(#bop-stem)" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+      <!-- Large leaf left -->
+      <path d="
+        M 136,380
+        C 110,365 72,340 40,300
+        C 28,284 32,268 50,272
+        C 82,308 112,338 132,365
+      " fill="url(#bop-leaf1)" opacity="0.85"/>
+      <!-- leaf midrib -->
+      <path d="M 136,380 Q 88,338 46,288" stroke="#1A4420" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <!-- leaf side veins -->
+      <path d="M 95,350 Q 80,338 66,318" stroke="#1A4420" stroke-width="0.8" fill="none" opacity="0.3"/>
+      <path d="M 112,362 Q 95,350 80,334" stroke="#1A4420" stroke-width="0.8" fill="none" opacity="0.25"/>
+
+      <!-- Large leaf right -->
+      <path d="
+        M 140,370
+        C 165,355 200,328 228,285
+        C 240,268 234,252 216,258
+        C 188,292 160,320 142,355
+      " fill="url(#bop-leaf1)" opacity="0.75"/>
+      <path d="M 140,370 Q 190,328 224,268" stroke="#1A4420" stroke-width="1.5" fill="none" opacity="0.35"/>
+
+      <!-- Spathe bract (the green "boat" the flower sits in) -->
+      <!-- Horizontal, slightly angled, at top of stem -->
+      <path d="
+        M 68,250
+        C 72,238 82,228 100,224
+        C 124,220 155,218 182,222
+        C 200,226 210,234 208,248
+        C 198,256 172,260 142,262
+        C 118,263 90,258 70,252
+        Z
+      " fill="url(#bop-bract)"/>
+      <!-- Bract edge detail -->
+      <path d="M 68,250 C 90,244 120,238 150,236 C 172,235 196,238 208,248" stroke="rgba(80,140,40,0.3)" stroke-width="1" fill="none"/>
+      <!-- Bract midrib -->
+      <path d="M 70,251 Q 140,246 206,248" stroke="#0E2A10" stroke-width="1" fill="none" opacity="0.25"/>
+
+      <!-- Stem merges into bract -->
+      <path d="M 136,290 Q 137,268 138,258" stroke="url(#bop-stem)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <!-- SEPALS — orange, fan upward from bract -->
+      <!-- Sepal 1: leftmost, leans left -->
+      <path d="
+        M 108,240
+        C 98,218 82,192 62,165
+        C 54,154 48,148 50,160
+        C 58,180 74,205 90,232
+        Z
+      " fill="url(#bop-sepal)"/>
+      <!-- Sepal 2: center, goes straight up -->
+      <path d="
+        M 122,235
+        C 118,210 112,178 108,145
+        C 106,132 108,124 114,132
+        C 122,158 128,190 128,228
+        Z
+      " fill="url(#bop-sepal)"/>
+      <!-- Sepal 3: rightmost, leans right -->
+      <path d="
+        M 138,233
+        C 142,210 155,183 170,158
+        C 177,147 184,142 180,155
+        C 172,174 158,200 146,228
+        Z
+      " fill="url(#bop-sepal)"/>
+
+      <!-- Sepal highlights -->
+      <path d="M 108,240 Q 76,202 54,165" stroke="rgba(255,220,120,0.22)" stroke-width="1.5" fill="none"/>
+      <path d="M 122,235 Q 116,195 110,148" stroke="rgba(255,220,120,0.2)" stroke-width="1.5" fill="none"/>
+      <path d="M 138,233 Q 150,200 174,160" stroke="rgba(255,220,120,0.18)" stroke-width="1.5" fill="none"/>
+
+      <!-- PETALS — blue/purple, narrower, emerge from center -->
+      <!-- Petal 1 -->
+      <path d="
+        M 130,236
+        C 134,218 140,195 148,170
+        C 152,158 157,152 155,162
+        C 150,180 144,202 136,228
+        Z
+      " fill="url(#bop-petal)" opacity="0.9"/>
+      <!-- Petal 2 -->
+      <path d="
+        M 142,234
+        C 150,216 162,192 172,168
+        C 177,156 180,150 176,162
+        C 169,182 158,206 148,228
+        Z
+      " fill="url(#bop-petal)" opacity="0.85"/>
+      <!-- Petal tip white -->
+      <path d="M 152,168 Q 155,156 158,162" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- Small Ginger Lily bottom right -->
+  <div class="hero-right-botanical-2">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 260" width="100%">
+      <defs>
+        <radialGradient id="ginger-outer" cx="50%" cy="60%" r="55%">
+          <stop offset="0%" stop-color="#E8607A"/>
+          <stop offset="100%" stop-color="#C83050"/>
+        </radialGradient>
+        <radialGradient id="ginger-inner" cx="50%" cy="40%" r="50%">
+          <stop offset="0%" stop-color="#F0A0B0"/>
+          <stop offset="100%" stop-color="#D86080"/>
+        </radialGradient>
+        <linearGradient id="ginger-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1E4D1A"/>
+          <stop offset="100%" stop-color="#3A7028"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Stem -->
+      <path d="M 80,256 Q 80,220 80,185" stroke="url(#ginger-stem)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <!-- Torch/cone — layered petals from outside in, bottom to top -->
+      <!-- Outer layer petals (larger, darker) -->
+      <ellipse cx="80" cy="152" rx="42" ry="16" fill="url(#ginger-outer)" transform="rotate(-8,80,152)"/>
+      <ellipse cx="80" cy="138" rx="40" ry="15" fill="url(#ginger-outer)" transform="rotate(5,80,138)"/>
+      <ellipse cx="78" cy="124" rx="38" ry="14" fill="url(#ginger-outer)" transform="rotate(-5,78,124)"/>
+      <ellipse cx="80" cy="110" rx="35" ry="13" fill="url(#ginger-outer)" transform="rotate(4,80,110)"/>
+      <ellipse cx="80" cy="98"  rx="32" ry="12" fill="url(#ginger-outer)" transform="rotate(-4,80,98)"/>
+
+      <!-- Middle layer (lighter) -->
+      <ellipse cx="80" cy="148" rx="32" ry="12" fill="url(#ginger-inner)" transform="rotate(6,80,148)"/>
+      <ellipse cx="80" cy="134" rx="30" ry="11" fill="url(#ginger-inner)" transform="rotate(-5,80,134)"/>
+      <ellipse cx="80" cy="120" rx="28" ry="10" fill="url(#ginger-inner)" transform="rotate(4,80,120)"/>
+      <ellipse cx="80" cy="108" rx="25" ry="9"  fill="url(#ginger-inner)" transform="rotate(-4,80,108)"/>
+
+      <!-- Inner tip petals (pale pink) -->
+      <ellipse cx="80" cy="94"  rx="20" ry="8"  fill="#F8D0DC" transform="rotate(3,80,94)"/>
+      <ellipse cx="80" cy="84"  rx="16" ry="7"  fill="#FAEAEE" transform="rotate(-3,80,84)"/>
+      <ellipse cx="80" cy="74"  rx="12" ry="5"  fill="#FDF4F6" transform="rotate(2,80,74)"/>
+
+      <!-- Petal edge details (subtle lines suggesting individual petals) -->
+      <path d="M 42,152 Q 80,144 118,152" stroke="rgba(200,40,70,0.12)" stroke-width="0.8" fill="none"/>
+      <path d="M 44,138 Q 80,130 116,138" stroke="rgba(200,40,70,0.10)" stroke-width="0.8" fill="none"/>
+      <path d="M 48,124 Q 80,116 112,124" stroke="rgba(200,40,70,0.10)" stroke-width="0.8" fill="none"/>
+
+      <!-- Small leaves at base of cone -->
+      <path d="M 80,185 C 56,178 40,168 35,155 C 50,158 66,170 78,182" fill="#2A6A20" opacity="0.6"/>
+      <path d="M 80,185 C 104,178 120,168 125,155 C 110,158 94,170 82,182" fill="#2A6A20" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <!-- CENTER TEXT -->
+  <div class="hero-tc">
+    <p class="eyebrow">Mariage · Panama · Été 2025</p>
+    <h1 class="hero-names">
+      <em>Valérie</em>
+      <span class="amp">et</span>
+      Pierre
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-location">Bord du Pacifique</p>
+  </div>
+
+</div><!-- /hero-v2 -->
+
+
+<!-- ════════════════════════════════════
+     BOTANICAL PLATE
+════════════════════════════════════ -->
+<div class="page">
+<section class="plate-section reveal">
+  <p class="plate-label">Fleurs du Mariage</p>
+  <h2 class="plate-title">Planche Botanique</h2>
+
+  <div class="botanical-grid">
+
+    <!-- 1. Anthurium -->
+    <div class="botanical-cell reveal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="170" height="255">
+        <defs>
+          <radialGradient id="p-ant-sp" cx="38%" cy="28%" r="65%">
+            <stop offset="0%" stop-color="#F04858"/>
+            <stop offset="42%" stop-color="#C81830"/>
+            <stop offset="100%" stop-color="#7A0A1A"/>
+          </radialGradient>
+          <radialGradient id="p-ant-hi" cx="32%" cy="25%" r="40%">
+            <stop offset="0%" stop-color="rgba(255,160,140,0.25)"/>
+            <stop offset="100%" stop-color="rgba(255,160,140,0)"/>
+          </radialGradient>
+          <linearGradient id="p-ant-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A8A30"/>
+            <stop offset="100%" stop-color="#1A4A1E"/>
+          </linearGradient>
+        </defs>
+        <!-- Petiole -->
+        <path d="M 98,210 Q 96,238 92,268" stroke="#2A6820" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- Leaf -->
+        <path d="M 92,268 C 62,278 28,292 12,310 C 44,305 78,292 92,274" fill="url(#p-ant-leaf)" opacity="0.6"/>
+        <path d="M 92,268 Q 50,288 14,308" stroke="#1A4A1E" stroke-width="1" fill="none" opacity="0.25"/>
+        <!-- Spathe -->
+        <path d="M 98,55 C 130,15 178,30 178,80 C 178,134 122,172 98,192 C 74,172 18,134 18,80 C 18,30 66,15 98,55 Z" fill="url(#p-ant-sp)"/>
+        <path d="M 98,55 C 130,15 178,30 178,80 C 178,134 122,172 98,192 C 74,172 18,134 18,80 C 18,30 66,15 98,55 Z" fill="url(#p-ant-hi)"/>
+        <!-- Veins -->
+        <path d="M 98,55 Q 98,122 98,192" stroke="rgba(140,8,22,0.14)" stroke-width="1.5" fill="none"/>
+        <path d="M 98,82 Q 130,79 162,70" stroke="rgba(140,8,22,0.09)" stroke-width="1" fill="none"/>
+        <path d="M 98,102 Q 128,100 156,93" stroke="rgba(140,8,22,0.09)" stroke-width="1" fill="none"/>
+        <path d="M 98,122 Q 120,121 140,117" stroke="rgba(140,8,22,0.07)" stroke-width="1" fill="none"/>
+        <path d="M 98,142 Q 116,142 130,139" stroke="rgba(140,8,22,0.06)" stroke-width="1" fill="none"/>
+        <path d="M 98,82 Q 66,79 34,72" stroke="rgba(140,8,22,0.09)" stroke-width="1" fill="none"/>
+        <path d="M 98,102 Q 68,100 40,95" stroke="rgba(140,8,22,0.09)" stroke-width="1" fill="none"/>
+        <path d="M 98,122 Q 76,121 56,119" stroke="rgba(140,8,22,0.07)" stroke-width="1" fill="none"/>
+        <!-- Spadix -->
+        <path d="M 115,70 Q 152,108 144,172" stroke="#C8A020" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M 115,70 Q 152,108 144,172" stroke="#F0C840" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <path d="M 115,70 Q 152,108 144,172" stroke="#8A6808" stroke-width="1.5" fill="none" stroke-dasharray="1,5" opacity="0.22"/>
+        <!-- Stem connection -->
+        <path d="M 98,192 Q 98,200 98,210" stroke="#2A6820" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <p class="botanical-name-latin">Anthurium andraeanum</p>
+        <p class="botanical-name-common">Anthurium</p>
+      </div>
+    </div>
+
+    <!-- 2. Birds of Paradise -->
+    <div class="botanical-cell reveal d1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="170" height="255">
+        <defs>
+          <linearGradient id="p-bop-sep" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D46010"/>
+            <stop offset="55%" stop-color="#F09020"/>
+            <stop offset="100%" stop-color="#F8C040"/>
+          </linearGradient>
+          <linearGradient id="p-bop-pet" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2840A8"/>
+            <stop offset="100%" stop-color="#5060C8"/>
+          </linearGradient>
+          <linearGradient id="p-bop-br" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#3A6A28"/>
+            <stop offset="100%" stop-color="#0E2A10"/>
+          </linearGradient>
+          <linearGradient id="p-bop-lf" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3A7828"/>
+            <stop offset="100%" stop-color="#1A4420"/>
+          </linearGradient>
+        </defs>
+        <!-- Stem -->
+        <path d="M 100,295 Q 100,230 100,180" stroke="#1E4A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Leaf left -->
+        <path d="M 100,250 C 78,238 52,220 30,192 C 20,178 24,164 40,168 C 64,196 86,222 98,244" fill="url(#p-bop-lf)" opacity="0.8"/>
+        <path d="M 100,250 Q 64,220 34,178" stroke="#1A4420" stroke-width="1.2" fill="none" opacity="0.35"/>
+        <!-- Leaf right -->
+        <path d="M 100,242 C 122,228 148,208 166,178 C 174,164 168,152 154,158 C 136,186 116,210 102,236" fill="url(#p-bop-lf)" opacity="0.7"/>
+        <path d="M 100,242 Q 138,210 164,168" stroke="#1A4420" stroke-width="1.2" fill="none" opacity="0.3"/>
+        <!-- Spathe bract -->
+        <path d="M 44,162 C 50,148 64,140 86,136 C 108,132 138,132 158,138 C 170,143 174,153 168,164 C 152,170 128,173 100,174 C 76,174 54,168 46,162 Z" fill="url(#p-bop-br)"/>
+        <path d="M 44,162 C 62,157 84,152 106,150 C 126,149 150,152 166,162" stroke="rgba(80,140,40,0.28)" stroke-width="1" fill="none"/>
+        <path d="M 46,163 Q 106,158 166,163" stroke="#0E2A10" stroke-width="0.8" fill="none" opacity="0.2"/>
+        <!-- Connection stem → bract -->
+        <path d="M 100,180 Q 100,172 100,168" stroke="#1E4A1A" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- Sepal 1 — left -->
+        <path d="M 72,152 C 64,132 52,108 36,84 C 28,72 24,66 28,76 C 36,96 50,120 66,145 Z" fill="url(#p-bop-sep)"/>
+        <path d="M 72,152 Q 50,116 32,78" stroke="rgba(255,220,100,0.2)" stroke-width="1" fill="none"/>
+        <!-- Sepal 2 — center -->
+        <path d="M 88,148 C 84,126 80,98 78,68 C 77,55 80,48 85,57 C 90,80 92,108 92,140 Z" fill="url(#p-bop-sep)"/>
+        <path d="M 88,148 Q 84,106 80,60" stroke="rgba(255,220,100,0.2)" stroke-width="1" fill="none"/>
+        <!-- Sepal 3 — right -->
+        <path d="M 104,146 C 110,126 122,102 134,78 C 140,65 146,60 142,72 C 135,92 122,116 110,140 Z" fill="url(#p-bop-sep)"/>
+        <path d="M 104,146 Q 120,108 140,72" stroke="rgba(255,220,100,0.18)" stroke-width="1" fill="none"/>
+        <!-- Petals — blue -->
+        <path d="M 96,148 C 100,130 108,108 116,86 C 120,74 124,68 120,78 C 114,98 108,120 102,142 Z" fill="url(#p-bop-pet)" opacity="0.9"/>
+        <path d="M 108,146 C 114,128 124,106 134,84 C 138,72 142,68 138,78 C 130,98 120,120 112,140 Z" fill="url(#p-bop-pet)" opacity="0.85"/>
+        <!-- Petal highlights -->
+        <path d="M 98,148 Q 104,118 114,80" stroke="rgba(140,160,240,0.2)" stroke-width="1" fill="none"/>
+      </svg>
+      <div>
+        <p class="botanical-name-latin">Strelitzia reginae</p>
+        <p class="botanical-name-common">Oiseau de Paradis</p>
+      </div>
+    </div>
+
+    <!-- 3. Heliconia -->
+    <div class="botanical-cell reveal d2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="170" height="255">
+        <defs>
+          <linearGradient id="p-heli-a" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D42A1A"/>
+            <stop offset="62%" stop-color="#E86028"/>
+            <stop offset="100%" stop-color="#F5A040"/>
+          </linearGradient>
+          <linearGradient id="p-heli-b" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#C82018"/>
+            <stop offset="62%" stop-color="#D85020"/>
+            <stop offset="100%" stop-color="#E88830"/>
+          </linearGradient>
+          <linearGradient id="p-heli-lf" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4A9028"/>
+            <stop offset="100%" stop-color="#1A4A18"/>
+          </linearGradient>
+        </defs>
+        <!-- Main stem -->
+        <path d="M 96,295 Q 96,215 96,110" stroke="#1E4A1A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <!-- Sub-stems -->
+        <path d="M 96,266 Q 108,258 122,250" stroke="#2A6020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 96,236 Q 80,228 65,220" stroke="#2A6020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 96,206 Q 110,198 126,190" stroke="#2A6020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 96,176 Q 79,168 62,160" stroke="#2A6020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 96,146 Q 112,138 130,130" stroke="#2A6020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Bracts -->
+        <!-- B1 right -->
+        <path d="M 96,272 C 110,262 136,254 162,248 C 174,246 178,252 174,260 C 158,264 128,270 100,275 Z" fill="url(#p-heli-a)"/>
+        <path d="M 162,248 Q 170,249 172,256" stroke="#F5D060" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <!-- B2 left -->
+        <path d="M 96,242 C 80,234 55,228 32,224 C 20,222 16,228 22,237 C 38,240 64,244 98,247 Z" fill="url(#p-heli-b)"/>
+        <path d="M 32,224 Q 22,226 22,234" stroke="#F5D060" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <!-- B3 right -->
+        <path d="M 96,212 C 110,202 138,194 165,188 C 178,186 182,192 178,201 C 160,205 130,210 100,215 Z" fill="url(#p-heli-a)"/>
+        <path d="M 165,188 Q 174,189 176,197" stroke="#F5D060" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <!-- B4 left -->
+        <path d="M 96,182 C 78,175 52,169 28,165 C 15,163 10,170 17,178 C 34,182 60,185 98,188 Z" fill="url(#p-heli-b)"/>
+        <!-- B5 right -->
+        <path d="M 96,152 C 112,143 140,136 166,130 C 178,128 182,134 178,143 C 160,147 130,152 100,156 Z" fill="url(#p-heli-a)"/>
+        <path d="M 166,130 Q 174,131 176,139" stroke="#F5D060" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.65"/>
+        <!-- Large leaves behind (subtle) -->
+        <path d="M 96,295 C 60,282 28,260 14,232 C 28,236 60,256 94,278" fill="url(#p-heli-lf)" opacity="0.28"/>
+        <path d="M 96,295 C 132,280 162,256 174,226 C 158,232 130,252 98,274" fill="url(#p-heli-lf)" opacity="0.22"/>
+      </svg>
+      <div>
+        <p class="botanical-name-latin">Heliconia psittacorum</p>
+        <p class="botanical-name-common">Héliconie</p>
+      </div>
+    </div>
+
+    <!-- 4. Ginger Lily / Torch Ginger -->
+    <div class="botanical-cell reveal d3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="170" height="255">
+        <defs>
+          <radialGradient id="p-gin-out" cx="50%" cy="60%" r="55%">
+            <stop offset="0%" stop-color="#DC5872"/>
+            <stop offset="100%" stop-color="#B82848"/>
+          </radialGradient>
+          <radialGradient id="p-gin-mid" cx="50%" cy="45%" r="52%">
+            <stop offset="0%" stop-color="#F09AAE"/>
+            <stop offset="100%" stop-color="#D86888"/>
+          </radialGradient>
+          <radialGradient id="p-gin-in" cx="50%" cy="35%" r="48%">
+            <stop offset="0%" stop-color="#FAEAEE"/>
+            <stop offset="100%" stop-color="#F0B8C8"/>
+          </radialGradient>
+          <linearGradient id="p-gin-st" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1E4A1A"/>
+            <stop offset="100%" stop-color="#3A7828"/>
+          </linearGradient>
+          <linearGradient id="p-gin-lf" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4A9030"/>
+            <stop offset="100%" stop-color="#1A4A1A"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Stem -->
+        <path d="M 100,295 Q 100,248 100,210" stroke="url(#p-gin-st)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+        <!-- Small leaves at base of cone -->
+        <path d="M 100,210 C 72,202 50,190 38,174 C 54,177 76,190 98,204" fill="url(#p-gin-lf)" opacity="0.65"/>
+        <path d="M 100,210 C 128,202 150,188 162,172 C 146,176 124,190 102,204" fill="url(#p-gin-lf)" opacity="0.6"/>
+
+        <!-- Large leaf left -->
+        <path d="M 100,270 C 66,256 36,232 20,200 C 14,186 20,174 34,180 C 56,208 78,242 98,264" fill="url(#p-gin-lf)" opacity="0.5"/>
+        <path d="M 100,270 Q 56,238 24,194" stroke="#1A4420" stroke-width="1" fill="none" opacity="0.22"/>
+
+        <!-- Torch/cone structure -->
+        <!-- Outer petals — largest, darkest -->
+        <ellipse cx="100" cy="174" rx="44" ry="17" fill="url(#p-gin-out)" transform="rotate(-7 100 174)"/>
+        <ellipse cx="100" cy="159" rx="42" ry="16" fill="url(#p-gin-out)" transform="rotate(6 100 159)"/>
+        <ellipse cx="100" cy="145" rx="40" ry="15" fill="url(#p-gin-out)" transform="rotate(-5 100 145)"/>
+        <ellipse cx="100" cy="132" rx="38" ry="14" fill="url(#p-gin-out)" transform="rotate(5 100 132)"/>
+        <ellipse cx="100" cy="120" rx="36" ry="13" fill="url(#p-gin-out)" transform="rotate(-4 100 120)"/>
+
+        <!-- Middle petals -->
+        <ellipse cx="100" cy="170" rx="34" ry="13" fill="url(#p-gin-mid)" transform="rotate(5 100 170)"/>
+        <ellipse cx="100" cy="156" rx="32" ry="12" fill="url(#p-gin-mid)" transform="rotate(-5 100 156)"/>
+        <ellipse cx="100" cy="142" rx="30" ry="11" fill="url(#p-gin-mid)" transform="rotate(4 100 142)"/>
+        <ellipse cx="100" cy="129" rx="28" ry="10" fill="url(#p-gin-mid)" transform="rotate(-4 100 129)"/>
+        <ellipse cx="100" cy="117" rx="26" ry="9"  fill="url(#p-gin-mid)" transform="rotate(3 100 117)"/>
+
+        <!-- Inner petals — pale pink -->
+        <ellipse cx="100" cy="110" rx="22" ry="8" fill="url(#p-gin-in)" transform="rotate(-3 100 110)"/>
+        <ellipse cx="100" cy="100" rx="18" ry="7" fill="url(#p-gin-in)" transform="rotate(3 100 100)"/>
+        <ellipse cx="100" cy="91"  rx="14" ry="6" fill="url(#p-gin-in)" transform="rotate(-2 100 91)"/>
+        <ellipse cx="100" cy="83"  rx="10" ry="5" fill="#FEF4F7"/>
+        <ellipse cx="100" cy="76"  rx="7"  ry="4" fill="#FFFAFC"/>
+
+        <!-- Petal edge detail lines -->
+        <path d="M 56,174 Q 100,166 144,174" stroke="rgba(180,30,60,0.10)" stroke-width="0.8" fill="none"/>
+        <path d="M 58,159 Q 100,151 142,159" stroke="rgba(180,30,60,0.09)" stroke-width="0.8" fill="none"/>
+        <path d="M 60,145 Q 100,137 140,145" stroke="rgba(180,30,60,0.08)" stroke-width="0.8" fill="none"/>
+        <path d="M 64,132 Q 100,124 136,132" stroke="rgba(180,30,60,0.07)" stroke-width="0.8" fill="none"/>
+      </svg>
+      <div>
+        <p class="botanical-name-latin">Alpinia purpurata</p>
+        <p class="botanical-name-common">Gingembre Décoratif</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div><!-- /page -->
+
+
+<!-- ════════════════════════════════════
+     COLOUR PALETTE
+════════════════════════════════════ -->
+<div style="background: var(--cream); padding: 6rem 5vw; border-top: 1px solid var(--rule);">
+<div class="page" style="padding:0">
+  <p class="plate-label reveal">Palette de Couleurs</p>
+  <h2 class="plate-title reveal d1">Inspirée des <em style="font-style:italic;font-family:'Cormorant Garamond',serif">Fleurs Tropicales</em></h2>
+  <div class="palette-row reveal d2">
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#C8215A"></div>
+      <span class="swatch-name">Crimson<br>Profond</span>
+      <span class="swatch-hex">#C8215A</span>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#E896A8"></div>
+      <span class="swatch-name">Rose<br>Anthurium</span>
+      <span class="swatch-hex">#E896A8</span>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#F8E2D8"></div>
+      <span class="swatch-name">Pétale<br>Pâle</span>
+      <span class="swatch-hex">#F8E2D8</span>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#F4A870"></div>
+      <span class="swatch-name">Abricot<br>Tropical</span>
+      <span class="swatch-hex">#F4A870</span>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#E8722A"></div>
+      <span class="swatch-name">Orange<br>Strelitzia</span>
+      <span class="swatch-hex">#E8722A</span>
+    </div>
+    <div class="palette-swatch">
+      <div class="swatch-circle" style="background:#1E4D2E"></div>
+      <span class="swatch-name">Vert<br>Forêt</span>
+      <span class="swatch-hex">#1E4D2E</span>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     TYPOGRAPHY
+════════════════════════════════════ -->
+<div class="page">
+<section class="typo-section">
+  <p class="plate-label reveal">Typographie</p>
+  <h2 class="plate-title reveal d1">Les Fontes</h2>
+  <div class="typo-pair">
+    <div class="typo-spec reveal d1">
+      <p class="typo-role-label">Titres & Noms</p>
+      <p class="typo-font-name">Cormorant Garamond — Light Italic</p>
+      <div class="typo-sample-large"><em>Valérie<br>&amp; Pierre</em></div>
+      <p class="typo-sample-abc">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+      <p class="typo-sample-body">Élégance française des grands titres. L'italique fine donne un toucher romantique à chaque lettre, idéale pour les faire-part et en-têtes de sections.</p>
+    </div>
+    <div class="typo-spec reveal d2">
+      <p class="typo-role-label">Corps & Interface</p>
+      <p class="typo-font-name">Jost — Light / Regular / Medium</p>
+      <div class="typo-sample-weights">
+        <span style="font-weight:200;color:rgba(28,18,10,0.35)">Ultralight — Labels, détails, dates</span>
+        <span style="font-weight:300">Light — Corps de texte principal</span>
+        <span style="font-weight:400;color:rgba(28,18,10,0.75)">Regular — Informations importantes</span>
+        <span style="font-weight:500;font-size:1rem">Medium — Titres de section</span>
+      </div>
+      <p class="typo-sample-body" style="margin-top:1.4rem">Géométrique humaniste, aéré, parfait pour le web. Son contraste avec le Cormorant Garamond crée une tension élégante entre classique et moderne.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ════════════════════════════════════
+     INVITATION SAMPLE
+════════════════════════════════════ -->
+<div style="background:var(--cream); border-top:1px solid var(--rule); padding:7rem 5vw 8rem">
+<section class="invitation-section" style="padding:0">
+  <p class="plate-label reveal" style="text-align:center">Exemple</p>
+  <h2 class="plate-title reveal d1" style="text-align:center;margin-bottom:3.5rem">Faire-part</h2>
+
+  <div class="invitation-card reveal d2">
+    <!-- Corner ornaments (SVG) -->
+    <div class="inv-corner inv-corner-tl">
+      <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1,17 Q 1,1 17,1" stroke="rgba(28,18,10,0.2)" stroke-width="1" fill="none"/>
+        <circle cx="1" cy="1" r="1.5" fill="rgba(28,18,10,0.18)"/>
+      </svg>
+    </div>
+    <div class="inv-corner inv-corner-tr">
+      <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1,17 Q 1,1 17,1" stroke="rgba(28,18,10,0.2)" stroke-width="1" fill="none"/>
+        <circle cx="1" cy="1" r="1.5" fill="rgba(28,18,10,0.18)"/>
+      </svg>
+    </div>
+    <div class="inv-corner inv-corner-bl">
+      <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1,17 Q 1,1 17,1" stroke="rgba(28,18,10,0.2)" stroke-width="1" fill="none"/>
+        <circle cx="1" cy="1" r="1.5" fill="rgba(28,18,10,0.18)"/>
+      </svg>
+    </div>
+    <div class="inv-corner inv-corner-br">
+      <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1,17 Q 1,1 17,1" stroke="rgba(28,18,10,0.2)" stroke-width="1" fill="none"/>
+        <circle cx="1" cy="1" r="1.5" fill="rgba(28,18,10,0.18)"/>
+      </svg>
+    </div>
+
+    <p class="inv-eyebrow">Nous avons l'honneur de vous inviter</p>
+    <div class="inv-names">
+      <em>Valérie</em>
+      <span class="inv-amp">et</span>
+      <em>Pierre</em>
+    </div>
+    <div class="inv-rule"></div>
+    <p class="inv-detail">
+      Célèbrent leur union<br>
+      au bord du Pacifique<br>
+      <br>
+      Panama · Été 2025
+    </p>
+    <button class="inv-btn">Confirmer ma présence</button>
+  </div>
+</section>
+</div>
+
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+  <span class="footer-name">Valérie &amp; Pierre</span>
+  <span class="footer-note">Mood Board · Charte Graphique · 2025</span>
+</footer>
+
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
